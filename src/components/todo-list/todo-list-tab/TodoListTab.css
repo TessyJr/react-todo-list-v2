@@ -1,0 +1,10 @@
+.todo-list-tab-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.todo-list-tab-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
