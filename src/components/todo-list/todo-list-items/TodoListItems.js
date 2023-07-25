@@ -8,17 +8,13 @@ const TodoListItems = ({ isTabCompleted }) => {
 
   return (
     <div className="todo-list-items-container">
-      {isTabCompleted
-        ? todoList.map((item) => {
-            return item.isCompleted === true ? (
-              <TodoListItem key={item.id} item={item} />
-            ) : null;
-          })
-        : todoList.map((item) => {
-            return item.isCompleted === false ? (
-              <TodoListItem key={item.id} item={item} />
-            ) : null;
-          })}
+      {todoList
+        .filter((item) =>
+          isTabCompleted ? item.isCompleted : !item.isCompleted
+        )
+        .map((item) => (
+          <TodoListItem key={item.id} item={item} />
+        ))}
     </div>
   );
 };

@@ -11,13 +11,9 @@ const TodoListItem = ({ item }) => {
 
   const handleCompleteTodoListItem = (id) => {
     setTodoList(
-      todoList.map((item) => {
-        if (item.id === id) {
-          return { ...item, isCompleted: true };
-        } else {
-          return item;
-        }
-      })
+      todoList.map((item) =>
+        item.id === id ? { ...item, isCompleted: true } : item
+      )
     );
   };
 
