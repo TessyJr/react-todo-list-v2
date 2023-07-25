@@ -1,6 +1,10 @@
 import "./TodoListItem.css";
+import { AppContext } from "../../../../App";
+import { useContext } from "react";
 
-const TodoListItem = ({ key, item, todoList, setTodoList }) => {
+const TodoListItem = ({ item }) => {
+  const { todoList, setTodoList } = useContext(AppContext);
+
   const handleDeleteTodoList = (id) => {
     setTodoList(todoList.filter((item) => item.id !== id));
   };

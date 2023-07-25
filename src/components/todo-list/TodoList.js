@@ -3,7 +3,7 @@ import { useState } from "react";
 import TodoListTab from "./todo-list-tab/TodoListTab";
 import TodoListItems from "./todo-list-items/TodoListItems";
 
-const TodoList = ({ todoList, setTodoList }) => {
+const TodoList = () => {
   const [isTabCompleted, setIsTabCompleted] = useState(false);
 
   return (
@@ -14,11 +14,7 @@ const TodoList = ({ todoList, setTodoList }) => {
         setIsTabCompleted={setIsTabCompleted}
       />
 
-      <TodoListItems
-        todoList={todoList}
-        setTodoList={setTodoList}
-        isTabCompleted={isTabCompleted}
-      />
+      <TodoListItems isTabCompleted={isTabCompleted} />
     </div>
   );
 };

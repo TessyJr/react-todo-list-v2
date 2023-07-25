@@ -1,7 +1,10 @@
 import "./TodoForm.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { AppContext } from "../../App";
 
-const TodoForm = ({ todoList, setTodoList }) => {
+const TodoForm = () => {
+  const { todoList, setTodoList } = useContext(AppContext);
+
   const [todoInputValue, setTodoInputValue] = useState("");
 
   const handleTodoInputValue = (event) => {
